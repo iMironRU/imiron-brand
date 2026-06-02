@@ -42,17 +42,30 @@ jobs:
           target-branch: main
           commit-message: 'chore: rebuild profile from imiron-brand [${{ github.sha }}]'
 
-      # ── Витрина 2: github-pages → iMironRU/iMironRU.github.io ──────────────
-      - name: Deploy github-pages site
+      # ── Витрина 2: imiron.ru лендинг → iMironRU/imironru.github.io (корень) ──
+      - name: Deploy imiron.ru landing
+        uses: cpina/github-action-push-to-another-repository@v1.7.2
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.DEPLOY_TOKEN }}
+        with:
+          source-directory: dist/site
+          destination-github-username: iMironRU
+          destination-repository-name: imironru.github.io
+          target-branch: main
+          commit-message: 'chore: rebuild landing from imiron-brand [${{ github.sha }}]'
+
+      # ── Витрина 2б: portfolio → iMironRU/imironru.github.io/portfolio ────────
+      - name: Deploy portfolio page
         uses: cpina/github-action-push-to-another-repository@v1.7.2
         env:
           API_TOKEN_GITHUB: ${{ secrets.DEPLOY_TOKEN }}
         with:
           source-directory: dist/github-pages
           destination-github-username: iMironRU
-          destination-repository-name: iMironRU.github.io
+          destination-repository-name: imironru.github.io
+          target-directory: portfolio
           target-branch: main
-          commit-message: 'chore: rebuild site from imiron-brand [${{ github.sha }}]'
+          commit-message: 'chore: rebuild portfolio from imiron-brand [${{ github.sha }}]'
 
       # ── Витрина 3: app → iMironRU/imironru.github.io/app ───────────────────
       - name: Deploy app site

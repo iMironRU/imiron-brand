@@ -5,14 +5,15 @@
   "type": "module",
   "scripts": {
     "validate": "node build/validate.mjs",
-    "build": "npm run build:profile && npm run build:resume && npm run build:pages && npm run build:app && npm run build:book",
+    "build": "npm run build:profile && npm run build:resume && npm run build:pages && npm run build:app && npm run build:book && npm run build:site",
     "build:profile": "node build/build-github-profile.mjs",
     "build:resume": "node build/build-resume.mjs",
     "build:pages": "node build/build-github-pages.mjs",
     "build:habr": "node build/build-habr.mjs",
     "build:infostart": "node build/build-infostart.mjs",
     "build:app": "node build/build-app.mjs",
-    "build:book": "node build/build-book.mjs"
+    "build:book": "node build/build-book.mjs",
+    "build:site": "node build/build-site.mjs"
   },
   "license": "CC-BY-SA-4.0",
   "author": "Александр Мирошниченко (iMironRU)",
