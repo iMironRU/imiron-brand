@@ -1,51 +1,50 @@
 # imiron-brand
 
-**Единый источник истины для личного бренда [iMironRU](https://github.com/iMironRU).**
-Один источник — много представлений. Контент о владельце пишется один раз и
-собирается в витрины: профиль GitHub, GitHub Pages / imiron.ru, резюме, Хабр, Инфостарт.
+Единый источник всего, что написано обо мне — **Александре Мирошниченко (iMironRU)**.
 
-## Принцип
+Данные живут здесь один раз. Сборщики разносят их по витринам автоматически при каждом пуше.
 
-- Факты (контакты, стек, проекты, кейсы, опыт, резюме) — только в `data/*.json`.
-- Нарративы (биография, портрет) — только в `content/`.
-- Витрины **генерируются** сборщиками. Готовые артефакты руками не правятся —
-  правка идёт в источник, затем пересборка.
-- Что куда идёт — задаёт поле `targets` (маркеры площадок). `["all"]` — во все;
-  отсутствие поля — везде; `[]` — никуда.
+## Что здесь публикуется
 
-## Структура
+| Витрина | Адрес | Что |
+|---|---|---|
+| Лендинг | [imiron.ru](https://imiron.ru) · [imironru.github.io](https://imironru.github.io) | Главная страница |
+| Приложения | [app.imiron.ru](https://app.imiron.ru) · [imironru.github.io/app/](https://imironru.github.io/app/) | Онлайн-инструменты и расширения 1С |
+| Книги | [book.imiron.ru](https://book.imiron.ru) · [imironru.github.io/book/](https://imironru.github.io/book/) | Рекомендованные книги |
+| Портфолио | [imironru.github.io/portfolio/](https://imironru.github.io/portfolio/) | Проекты, стек, кейсы, контакты |
+| Резюме | [imironru.github.io/imiron-brand/resume/](https://imironru.github.io/imiron-brand/resume/resume.html) | HTML-резюме |
+| Профиль GitHub | [github.com/iMironRU](https://github.com/iMironRU) | README профиля |
 
-```
-data/        источники (JSON): identity, contacts, skills, projects, cases, apps, books, resume
-content/     нарративы (Markdown): bio-short / bio-medium / bio-long (портрет)
-schema/      JSON Schema на каждый источник
-build/        сборщики (Node.js, ESM) + lib/ + validate.mjs
-targets/     шаблоны/ассеты витрин
-dist/        результат сборки (gitignored)
-```
+## Где лежат собранные HTML
 
-## Команды
+После каждого пуша GitHub Actions собирает и раскладывает файлы по репозиториям.
+Если нужно скопировать вручную — все готовые файлы живут в ветке и репозиториях витрин:
 
-```bash
-npm i                 # зависимости (ajv)
-npm run validate      # проверить data/ по схемам
-npm run build         # собрать профиль GitHub + резюме
-npm run build:profile # только README профиля
-npm run build:resume  # только резюме (HTML, дальше → PDF)
-```
+| Файл | Ветка / репозиторий |
+|---|---|
+| `index.html` (лендинг) | [iMironRU/imironru.github.io](https://github.com/iMironRU/imironru.github.io) — корень |
+| `app/index.html` | [iMironRU/imironru.github.io](https://github.com/iMironRU/imironru.github.io) — папка `app/` |
+| `book/index.html` | [iMironRU/imironru.github.io](https://github.com/iMironRU/imironru.github.io) — папка `book/` |
+| `portfolio/index.html` | [iMironRU/imironru.github.io](https://github.com/iMironRU/imironru.github.io) — папка `portfolio/` |
+| `resume/resume.html` | [iMironRU/imiron-brand](https://github.com/iMironRU/imiron-brand/tree/gh-pages) — ветка `gh-pages` |
+| `README.md` (профиль) | [iMironRU/iMironRU](https://github.com/iMironRU/iMironRU) — корень |
 
-## Витрины и маркеры
+## Как поменять что-то о себе
 
-| Маркер           | Витрина                         | Сборщик                     |
-| ---------------- | ------------------------------- | --------------------------- |
-| `github-profile` | README профиля iMironRU         | build-github-profile.mjs ✅ |
-| `resume`         | резюме (JSON Resume → HTML/PDF)  | build-resume.mjs ✅         |
-| `github-pages`   | imironru.github.io (= imiron.ru) | build-github-pages.mjs 🚧   |
-| `habr`           | профиль/манифест на Хабре        | build-habr.mjs 🚧           |
-| `infostart`      | профиль на Инфостарте            | build-infostart.mjs 🚧      |
+Правишь нужный файл прямо через веб-интерфейс GitHub — сборка запускается автоматически.
 
-`imiron.ru` подключается к GitHub Pages кастомным доменом (файл `CNAME`).
+| Что менять | Файл |
+|---|---|
+| Контакты, соцсети | [`data/contacts.json`](data/contacts.json) |
+| Проекты | [`data/projects.json`](data/projects.json) |
+| Стек и навыки | [`data/skills.json`](data/skills.json) |
+| Кейсы | [`data/cases.json`](data/cases.json) |
+| Приложения и расширения 1С | [`data/apps.json`](data/apps.json) |
+| Книги | [`data/books.json`](data/books.json) |
+| Резюме | [`data/resume.json`](data/resume.json) |
+| О себе (кто я, эпиграф, титулы) | [`data/identity.json`](data/identity.json) |
+| Биография (текст) | [`content/bio/`](content/bio/) |
 
 ## Лицензия
 
-CC BY-SA 4.0 · [@iMironRU](https://github.com/iMironRU)
+CC BY-SA 4.0 · [iMironRU](https://github.com/iMironRU)
