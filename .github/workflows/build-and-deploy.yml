@@ -54,7 +54,33 @@ jobs:
           target-branch: main
           commit-message: 'chore: rebuild site from imiron-brand [${{ github.sha }}]'
 
-      # ── Витрина 3: резюме → Pages этого репозитория ─────────────────────────
+      # ── Витрина 3: app → iMironRU/imironru.github.io/app ───────────────────
+      - name: Deploy app site
+        uses: cpina/github-action-push-to-another-repository@v1.7.2
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.DEPLOY_TOKEN }}
+        with:
+          source-directory: dist/app
+          destination-github-username: iMironRU
+          destination-repository-name: imironru.github.io
+          target-directory: app
+          target-branch: main
+          commit-message: 'chore: rebuild app from imiron-brand [${{ github.sha }}]'
+
+      # ── Витрина 4: book → iMironRU/imironru.github.io/book ──────────────────
+      - name: Deploy book site
+        uses: cpina/github-action-push-to-another-repository@v1.7.2
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.DEPLOY_TOKEN }}
+        with:
+          source-directory: dist/book
+          destination-github-username: iMironRU
+          destination-repository-name: imironru.github.io
+          target-directory: book
+          target-branch: main
+          commit-message: 'chore: rebuild book from imiron-brand [${{ github.sha }}]'
+
+      # ── Витрина 5: резюме → Pages этого репозитория ─────────────────────────
       - name: Deploy resume to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:

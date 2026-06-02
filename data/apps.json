@@ -1,20 +1,106 @@
 {
-  "_note": "Каталог приложений и расширений 1С — источник для app.imiron.ru. Заготовка: наполнить из существующего каталога app.imiron.ru и публикаций на Инфостарте.",
-  "apps": [
+  "online": [
     {
-      "id": "EXAMPLE-PLACEHOLDER",
-      "name": "TODO: название приложения/расширения",
-      "description": "TODO: краткое описание",
-      "platform": "1С:Предприятие 8.x",
-      "url": "",
-      "infostart": "",
-      "status": "published",
-      "targets": ["app", "github-profile"]
+      "id": "everything-all-right",
+      "name": "Everything All Right?",
+      "description": "Быстрый статус-чек — всё ли в порядке прямо сейчас.",
+      "url": "https://imiron.ru/everything-all-right/",
+      "meta": "imiron.ru/everything-all-right",
+      "icon": "check-circle",
+      "targets": ["app", "site"]
+    },
+    {
+      "id": "netpassport",
+      "name": "Net Passport",
+      "description": "Ваш цифровой паспорт в сети — управление онлайн-идентичностью.",
+      "url": "https://imiron.ru/netpassport/",
+      "meta": "imiron.ru/netpassport",
+      "icon": "id-card",
+      "targets": ["app", "site"]
+    },
+    {
+      "id": "translit",
+      "name": "Translit",
+      "description": "Мгновенная транслитерация кириллицы в латиницу и обратно.",
+      "url": "https://imiron.ru/translit/",
+      "meta": "imiron.ru/translit",
+      "icon": "translit",
+      "targets": ["app", "site"]
+    }
+  ],
+  "onec": [
+    {
+      "id": "print-full-name-kkm",
+      "name": "Печать полного наименования в чеки ККМ",
+      "description": "Расширение для 1С:Розница 2.2 — выводит полное наименование товара вместо краткого.",
+      "url": "https://infostart.ru/1c/reports/882008/",
+      "meta": "infostart.ru · №882008",
+      "date": "2018-08",
+      "icon": "doc",
+      "targets": ["app", "infostart"]
+    },
+    {
+      "id": "rmk-price-type",
+      "name": "РМК с выбором вида цен",
+      "description": "Рабочее место кассира УТ 11.4 (Базовая) — добавляет реквизит «Вид цены» с автоматическим пересчётом.",
+      "url": "https://infostart.ru/1c/reports/886662/",
+      "meta": "infostart.ru · №886662",
+      "date": "2018-08",
+      "icon": "monitor",
+      "targets": ["app", "infostart"]
+    },
+    {
+      "id": "optional-email-contractor",
+      "name": "Необязательный email при вводе контрагента",
+      "description": "Расширение для 1С:УТ 11.4 — убирает обязательность email при регистрации нового контрагента.",
+      "url": "https://infostart.ru/1c/tools/1121271/",
+      "meta": "infostart.ru · №1121271",
+      "date": "2019-09",
+      "icon": "tool",
+      "targets": ["app", "infostart"]
+    },
+    {
+      "id": "infostart-2120611",
+      "name": "Инструмент для 1С · №2120611",
+      "description": "Расширение конфигурации 1С:Предприятие 8.",
+      "url": "https://infostart.ru/1c/tools/2120611/",
+      "meta": "infostart.ru · №2120611",
+      "icon": "tool",
+      "targets": ["app", "infostart"],
+      "_todo": "Уточнить название"
+    },
+    {
+      "id": "infostart-2125746",
+      "name": "Инструмент для 1С · №2125746",
+      "description": "Расширение конфигурации 1С:Предприятие 8.",
+      "url": "https://infostart.ru/1c/tools/2125746/",
+      "meta": "infostart.ru · №2125746",
+      "icon": "tool",
+      "targets": ["app", "infostart"],
+      "_todo": "Уточнить название"
+    },
+    {
+      "id": "upd-xml-503",
+      "name": "Выгрузка УПД в XML (формат 5.03) для БП 3.0",
+      "description": "Расширение для 1С:Бухгалтерия 3.0 — переход на новый обязательный формат счёта-фактуры без подключения ЭДО.",
+      "url": "https://infostart.ru/1c/tools/2355880/",
+      "meta": "infostart.ru · №2355880",
+      "date": "2025-04",
+      "icon": "file-xml",
+      "targets": ["app", "infostart"]
+    },
+    {
+      "id": "markup-in-invoice",
+      "name": "Наценка в счёте",
+      "description": "Расширение для 1С:Бухгалтерия 3.0 — добавляет цену закупа и процент наценки в документ «Счёт».",
+      "url": "https://infostart.ru/1c/reports/2501939/",
+      "meta": "infostart.ru · №2501939",
+      "date": "2025-10",
+      "icon": "currency",
+      "targets": ["app", "infostart"]
     }
   ],
   "_todo": [
-    "Собрать перечень приложений/расширений с app.imiron.ru",
-    "Связать каждое с публикацией на Инфостарте (если есть)",
-    "Указать тип (онлайн-инструмент / расширение .cfe / обработка), версию платформы, статус"
+    "Уточнить названия infostart-2120611 и infostart-2125746"
   ]
 }
