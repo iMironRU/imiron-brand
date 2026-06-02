@@ -1,0 +1,82 @@
+{
+  "channels": [
+    {
+      "id": "email",
+      "label": "Почта",
+      "value": "imiron.ru@ya.ru",
+      "primary": true,
+      "targets": ["all"]
+    },
+    {
+      "id": "telegram-contact",
+      "label": "Telegram для связи",
+      "handle": "@iMironRU",
+      "url": "https://t.me/iMironRU",
+      "primary": true,
+      "targets": ["all"]
+    },
+    {
+      "id": "telegram-channel",
+      "label": "Telegram-канал",
+      "handle": "@blog_imiron",
+      "url": "https://t.me/blog_imiron",
+      "targets": ["all"]
+    },
+    {
+      "id": "site",
+      "label": "Сайт",
+      "url": "https://imiron.ru",
+      "targets": ["all"]
+    },
+    {
+      "id": "github",
+      "label": "GitHub",
+      "handle": "iMironRU",
+      "url": "https://github.com/iMironRU",
+      "targets": ["all"]
+    },
+    {
+      "id": "youtube",
+      "label": "YouTube",
+      "handle": "@imironru",
+      "url": "https://www.youtube.com/@imironru",
+      "targets": ["github-profile", "site"]
+    },
+    {
+      "id": "vk",
+      "label": "VK",
+      "handle": "imironru",
+      "url": "https://vk.com/imironru",
+      "targets": ["github-profile", "site"]
+    },
+    {
+      "id": "dzen",
+      "label": "Дзен",
+      "handle": "imiron",
+      "url": "https://dzen.ru/imiron",
+      "targets": ["github-profile", "site"]
+    },
+    {
+      "id": "blog",
+      "label": "Блог",
+      "url": "https://blog.imiron.ru",
+      "targets": ["github-profile", "site"]
+    },
+    {
+      "id": "email-legacy",
+      "label": "Почта (доменная, резерв)",
+      "value": "mal@miroshnichenko.me",
+      "active": false,
+      "note": "Про фамилию, не про бренд. На витрины не выносить.",
+      "targets": []
+    }
+  ],
+  "support": {
+    "label": "Поддержать",
+    "url": "https://yoomoney.ru/to/4100118370358462",
+    "targets": ["github-profile"]
+  },
+  "_todo": [
+    "Телефон — добавить актуальный, если нужен в резюме (targets: [resume])"
+  ]
+}

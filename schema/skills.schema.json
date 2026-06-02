@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "skills",
+  "type": "object",
+  "required": ["groups"],
+  "properties": {
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "keywords", "targets"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "name": { "type": "string" },
+          "level": { "type": "string" },
+          "primary": { "type": "boolean" },
+          "note": { "type": "string" },
+          "keywords": { "type": "array", "items": { "type": "string" } },
+          "targets": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

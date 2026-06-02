@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "contacts",
+  "type": "object",
+  "required": ["channels"],
+  "properties": {
+    "channels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "targets"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "label": { "type": "string" },
+          "value": { "type": "string" },
+          "handle": { "type": "string" },
+          "url": { "type": "string" },
+          "primary": { "type": "boolean" },
+          "active": { "type": "boolean" },
+          "note": { "type": "string" },
+          "targets": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "support": { "type": "object" }
+  }
+}

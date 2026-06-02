@@ -1,0 +1,20 @@
+{
+  "name": "imiron-brand",
+  "version": "0.1.0",
+  "description": "Единый источник истины для личного бренда iMironRU. Один источник — много представлений.",
+  "type": "module",
+  "scripts": {
+    "validate": "node build/validate.mjs",
+    "build": "npm run build:profile && npm run build:resume",
+    "build:profile": "node build/build-github-profile.mjs",
+    "build:resume": "node build/build-resume.mjs",
+    "build:pages": "node build/build-github-pages.mjs",
+    "build:habr": "node build/build-habr.mjs",
+    "build:infostart": "node build/build-infostart.mjs"
+  },
+  "license": "CC-BY-SA-4.0",
+  "author": "Александр Мирошниченко (iMironRU)",
+  "devDependencies": {
+    "ajv": "^8.17.1"
+  }
+}
