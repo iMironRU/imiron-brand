@@ -102,3 +102,35 @@ jobs:
           destination_dir: resume
           keep_files: true
           commit_message: 'chore: rebuild resume from imiron-brand [${{ github.sha }}]'
+
+      # ── Релиз: ZIP-архивы для ручного деплоя на хостинг ─────────────────────
+      - name: Pack dist into zip archives
+        run: |
+          cd dist
+          zip -r ../site.zip     site/
+          zip -r ../app.zip      app/
+          zip -r ../book.zip     book/
+          zip -r ../portfolio.zip github-pages/
+          zip -r ../resume.zip   resume/
+
+      - name: Create GitHub Release with archives
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ github.run_number }}
+          name: "Сборка #${{ github.run_number }}"
+          body: |
+            Автоматическая сборка от ${{ github.event.head_commit.timestamp }}
+
+            | Архив | Куда распаковывать |
+            |---|---|
+            | `site.zip` | корень `imiron.ru/public_html/` |
+            | `app.zip` | `app.imiron.ru/public_html/` |
+            | `book.zip` | `book.imiron.ru/public_html/` |
+            | `resume.zip` | куда удобно |
+            | `portfolio.zip` | куда удобно |
+          files: |
+            site.zip
+            app.zip
+            book.zip
+            portfolio.zip
+            resume.zip
