@@ -37,6 +37,9 @@ out.push('');
 
 out.push('## 🤝 Где меня найти');
 out.push('');
+if (identity.resumeUrl) {
+  out.push(`- 📄 Резюме: [imiron.ru/resume](${identity.resumeUrl})`);
+}
 for (const c of filterForTarget(contacts.channels, TARGET).filter((c) => c.active !== false)) {
   const link = c.url ? `[${c.handle || c.label}](${c.url})` : (c.value || c.handle);
   out.push(`- ${c.label}: ${link}`);

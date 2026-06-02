@@ -19,6 +19,7 @@
     "github-pages": "portrait",
     "telegram": "voice"
   },
+  "resumeUrl": "https://imiron.ru/resume",
   "location": { "city": "Оренбург", "region": "Оренбургская область", "countryCode": "RU" },
   "since": { "1c": 1999 },
   "_todo": [
