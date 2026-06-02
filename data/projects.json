@@ -1,0 +1,45 @@
+{
+  "projects": [
+    {
+      "id": "edu-framework",
+      "name": "edu-framework",
+      "tagline": "Открытый отраслевой стандарт управления образовательной организацией РФ",
+      "description": "Открытый платформенно-независимый фреймворк соответствия для российских образовательных организаций. 13 доменов, охват ВУЗ / СПО / ДО / ДПО / аспирантуры, машиночитаемые НПА (ФГОС, ФЗ-273) в JSON.",
+      "roles": ["Автор", "Архитектор"],
+      "url": "https://github.com/iMironRU/edu-framework",
+      "license": "CC BY-SA 4.0",
+      "status": "active",
+      "featured": true,
+      "keywords": ["методология", "образование", "open-source", "JSON Schema", "ФГОС"],
+      "targets": ["all"]
+    },
+    {
+      "id": "univercon",
+      "name": "Универкон",
+      "tagline": "Информационная система управления образовательной организацией на 1С",
+      "description": "Реализация edu-framework как ИС на платформе 1С. Стадия MVP: проектирование и подготовка к конвертации данных в первом пилотном вузе.",
+      "roles": ["Архитектор", "Аналитик", "Идейный вдохновитель"],
+      "url": "https://github.com/iMironRU/framework.univercon.aplicon.ru",
+      "status": "mvp",
+      "featured": true,
+      "keywords": ["1С", "образование", "ИС", "автоматизация"],
+      "targets": ["all"]
+    },
+    {
+      "id": "what-happens-when-click-1c",
+      "name": "what-happens-when-click-1c",
+      "tagline": "Что происходит, когда ты кликаешь в 1С",
+      "description": "Технический лонгрид о внутреннем устройстве платформы 1С — в духе what-happens-when Алекса Гейнора, для разработчиков, переходящих с других стеков.",
+      "roles": ["Автор"],
+      "url": "https://github.com/iMironRU/what-happens-when-click-1c",
+      "status": "active",
+      "featured": true,
+      "keywords": ["образовательный контент", "1С", "лонгрид"],
+      "targets": ["github-profile", "github-pages", "site"]
+    }
+  ],
+  "_todo": [
+    "Добавить прочие публичные репозитории и инструменты по мере надобности",
+    "Указать у каждого проекта дату старта/публикации, если нужно сортировать по времени"
+  ]
+}

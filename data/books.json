@@ -1,0 +1,20 @@
+{
+  "_note": "Книги и обучающие материалы — источник для book.imiron.ru. Заготовка: наполнить из существующей библиотеки.",
+  "books": [
+    {
+      "id": "EXAMPLE-PLACEHOLDER",
+      "title": "TODO: название книги/материала",
+      "kind": "book",
+      "author": "own",
+      "status": "TODO: writing | published | reading",
+      "description": "TODO",
+      "url": "",
+      "targets": ["book", "site"]
+    }
+  ],
+  "_todo": [
+    "Разделить на «пишу сам» (own) и «рекомендую/читаю» (reading)",
+    "Для книг-в-работе указать статус и ссылку на анонс",
+    "Связать с проектами (например, what-happens-when-click-1c как материал)"
+  ]
+}

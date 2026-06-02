@@ -1,0 +1,63 @@
+{
+  "groups": [
+    {
+      "id": "core-1c",
+      "name": "Платформа 1С",
+      "level": "Эксперт",
+      "primary": true,
+      "keywords": ["1С:Предприятие 7.7–8.5", "BSL", "конфигурации", "расширения", "интеграции", "обмены данными", "БСП"],
+      "targets": ["all"]
+    },
+    {
+      "id": "product-min",
+      "name": "Продуктовый минимум для быстрого старта",
+      "level": "Рабочий",
+      "keywords": ["1С", "Node.js", "React"],
+      "note": "Осознанный минимум для прототипа и интеграции",
+      "targets": ["site", "github-pages", "github-profile"]
+    },
+    {
+      "id": "db-infra",
+      "name": "СУБД и инфраструктура",
+      "level": "Продвинутый",
+      "keywords": ["MS SQL", "репликация", "Active Directory", "Linux", "Nginx", "Apache", "Docker"],
+      "targets": ["all"]
+    },
+    {
+      "id": "web-integration",
+      "name": "Веб и интеграции",
+      "level": "Рабочий",
+      "keywords": ["HTML", "JavaScript", "PHP", "REST", "HTTP-сервисы"],
+      "targets": ["all"]
+    },
+    {
+      "id": "automation",
+      "name": "Автоматизация и инструменты",
+      "level": "Рабочий",
+      "keywords": ["Bash", "PowerShell", "Python", "Git"],
+      "targets": ["all"]
+    },
+    {
+      "id": "analysis",
+      "name": "Бизнес-анализ и управление",
+      "level": "Эксперт",
+      "keywords": ["бизнес-анализ", "постановка задач", "ТЗ и ТЭО", "управление ИТ-проектами", "бухгалтерский учёт"],
+      "targets": ["all"]
+    },
+    {
+      "id": "education",
+      "name": "Образование и методология",
+      "level": "Эксперт",
+      "keywords": ["методология управления ОО", "edu-framework", "преподавание 1С", "учебные материалы"],
+      "targets": ["all"]
+    },
+    {
+      "id": "legacy",
+      "name": "Из прошлого",
+      "level": "Подзабыто",
+      "keywords": ["Бейсик", "Си", "С++"],
+      "note": "То, с чего всё началось — ПК-8000, 386-й",
+      "targets": ["site", "github-pages"]
+    }
+  ]
+}
