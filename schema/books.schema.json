@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "books",
+  "type": "object",
+  "required": ["books"],
+  "properties": {
+    "books": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "author", "kind", "description"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9.-]+$" },
+          "title": { "type": "string" },
+          "author": { "type": "string" },
+          "kind": { "type": "string", "enum": ["own", "recommend"] },
+          "format": { "type": "string", "enum": ["book", "longread", "reference", "guide", "article"] },
+          "status": { "type": "string", "enum": ["draft", "wip", "published"] },
+          "series": { "type": "string" },
+          "description": { "type": "string" },
+          "url": { "type": "string" },
+          "topics": { "type": "array", "items": { "type": "string" } },
+          "stores": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["label", "url"],
+              "properties": {
+                "label": { "type": "string" },
+                "url": { "type": "string" },
+                "icon": { "type": "string" }
+              }
+            }
+          },
+          "targets": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "_todo": { "type": "array", "items": { "type": "string" } }
+  }
+}

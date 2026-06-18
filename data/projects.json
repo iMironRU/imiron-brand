@@ -24,18 +24,6 @@
       "featured": true,
       "keywords": ["1С", "образование", "ИС", "автоматизация"],
       "targets": ["all"]
-    },
-    {
-      "id": "what-happens-when-click-1c",
-      "name": "what-happens-when-click-1c",
-      "tagline": "Что происходит, когда ты кликаешь в 1С",
-      "description": "Технический лонгрид о внутреннем устройстве платформы 1С — в духе what-happens-when Алекса Гейнора, для разработчиков, переходящих с других стеков.",
-      "roles": ["Автор"],
-      "url": "https://github.com/iMironRU/what-happens-when-click-1c",
-      "status": "active",
-      "featured": true,
-      "keywords": ["образовательный контент", "1С", "лонгрид"],
-      "targets": ["github-profile", "github-pages", "site"]
     }
   ],
   "_todo": [

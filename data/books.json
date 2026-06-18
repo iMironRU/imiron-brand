@@ -1,6 +1,92 @@
 {
   "books": [
     {
+      "id": "1c-metadata-tree-book",
+      "title": "Дерево метаданных 1С",
+      "author": "Александр Мирошниченко",
+      "kind": "own",
+      "format": "book",
+      "status": "wip",
+      "description": "Книга-учебник для новичков: учимся читать дерево метаданных 1С без программирования, понимать бизнес-логику конфигураций и проектировать свои. Сквозной пример — фирма «Канцтовары».",
+      "url": "https://github.com/iMironRU/1c-metadata-tree-book",
+      "topics": ["imiron-1c-book", "1c", "book", "metadata", "wip"],
+      "targets": ["book", "site", "github-profile", "github-pages"]
+    },
+    {
+      "id": "chtenie-dannyh-zaprosy",
+      "title": "Чтение данных. Язык запросов 1С",
+      "author": "Александр Мирошниченко",
+      "kind": "own",
+      "format": "book",
+      "status": "wip",
+      "series": "Школа инженеров 1С",
+      "description": "Вторая книга серии. Как читать данные на платформе 1С — от простых выборок до сложных запросов с пакетами, временными таблицами и виртуальными таблицами регистров.",
+      "url": "https://github.com/iMironRU/chtenie-dannyh-zaprosy",
+      "topics": ["imiron-1c-book", "1c", "book", "query-language", "wip"],
+      "targets": ["book", "site", "github-profile", "github-pages"]
+    },
+    {
+      "id": "1c-forms-reading",
+      "title": "Чтение форм 1С",
+      "author": "Александр Мирошниченко",
+      "kind": "own",
+      "format": "book",
+      "status": "draft",
+      "series": "Чтение 1С",
+      "description": "Третья книга трилогии «Чтение 1С» — про управляемые формы, командный интерфейс и чтение интерфейса как разговора системы с пользователем. Сквозной пример — фирма «Канцтовары».",
+      "url": "https://github.com/iMironRU/1c-forms-reading",
+      "topics": ["imiron-1c-book", "1c", "book", "managed-forms", "draft"],
+      "targets": ["book", "site", "github-profile", "github-pages"]
+    },
+    {
+      "id": "1c-semantic-reading",
+      "title": "1С как иностранный язык",
+      "author": "Александр Мирошниченко",
+      "kind": "own",
+      "format": "book",
+      "status": "draft",
+      "description": "Учимся читать код 1С осмысленно, а не как набор синтаксиса. Новый подход к пониманию платформы для тех, кто пришёл с других стеков.",
+      "url": "https://github.com/iMironRU/1c-semantic-reading",
+      "topics": ["imiron-1c-book", "1c", "book", "bsl", "draft"],
+      "targets": ["book", "site", "github-profile", "github-pages"]
+    },
+    {
+      "id": "1c-razgovornik",
+      "title": "1С-разговорник",
+      "author": "Александр Мирошниченко",
+      "kind": "own",
+      "format": "reference",
+      "status": "wip",
+      "description": "Сравнительный справочник синтаксиса и архитектуры 1С для разработчиков с опытом в Python, JavaScript или C#. Параллельные примеры: «вот так на 1С — вот так на привычном языке».",
+      "url": "https://github.com/iMironRU/1c-razgovornik",
+      "topics": ["imiron-1c-book", "1c", "book", "bsl", "reference", "wip"],
+      "targets": ["book", "site", "github-profile", "github-pages"]
+    },
+    {
+      "id": "install-1c",
+      "title": "Установка 1С:Предприятие",
+      "author": "Александр Мирошниченко",
+      "kind": "own",
+      "format": "guide",
+      "status": "wip",
+      "description": "Пошаговое руководство по установке платформы 1С:Предприятие — для тех, кто впервые ставит её на свой компьютер или сервер.",
+      "url": "https://github.com/iMironRU/install-1c",
+      "topics": ["imiron-1c-book", "1c", "book", "installation", "wip"],
+      "targets": ["book", "site", "github-profile", "github-pages"]
+    },
+    {
+      "id": "what-happens-when-click-1c",
+      "title": "Что происходит, когда ты кликаешь в 1С",
+      "author": "Александр Мирошниченко",
+      "kind": "own",
+      "format": "longread",
+      "status": "wip",
+      "description": "Технический лонгрид о внутреннем устройстве платформы 1С — в духе what-happens-when Алекса Гейнора, для разработчиков, переходящих с других стеков. Готовы части 0, I, II, III, IV; части V–IX в работе.",
+      "url": "https://github.com/iMironRU/what-happens-when-click-1c",
+      "topics": ["imiron-1c-book", "1c", "longread", "internals", "wip"],
+      "targets": ["book", "site", "github-profile", "github-pages"]
+    },
+    {
       "id": "pm-handbook",
       "title": "Настольная книга project-менеджера",
       "author": "Владимир Завертайлов",
@@ -41,7 +127,7 @@
     }
   ],
   "_todo": [
-    "Добавить собственные книги и материалы (own) по мере написания",
-    "Связать what-happens-when-click-1c как материал-в-работе"
+    "Добавить ссылки на покупку/чтение для own-книг по мере публикации (Литрес, Ozon и т.п.)",
+    "Уточнить статусы (wip/draft/published) при значимых вехах"
   ]
 }
