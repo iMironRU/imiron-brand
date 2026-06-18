@@ -24,6 +24,19 @@
       "featured": true,
       "keywords": ["1С", "образование", "ИС", "автоматизация"],
       "targets": ["all"]
+    },
+    {
+      "id": "bslexicon",
+      "name": "BSLexicon",
+      "tagline": "Браузерный тренажёр языка 1С (BSL)",
+      "description": "Браузерный тренажёр языка 1С (BSL): пишешь код, исполняешь и отлаживаешь пошагово — без платформы 1С.",
+      "roles": ["Автор"],
+      "url": "https://github.com/iMironRU/BSLexicon",
+      "demoUrl": "https://imironru.github.io/BSLexicon/",
+      "status": "active",
+      "featured": true,
+      "keywords": ["1С", "BSL", "образование", "интерпретатор", "monaco-editor", "playground"],
+      "targets": ["all"]
     }
   ],
   "_todo": [
