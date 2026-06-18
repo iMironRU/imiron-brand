@@ -10,6 +10,10 @@ const identity = loadJSON('identity.json');
 const contacts = loadJSON('contacts.json');
 const skills = loadJSON('skills.json');
 const projects = loadJSON('projects.json');
+const books = loadJSON('books.json');
+
+const STATUS_LABEL = { wip: 'в работе', draft: 'черновик', published: 'опубликовано' };
+const FORMAT_LABEL = { book: 'книга', longread: 'лонгрид', reference: 'справочник', guide: 'руководство', article: 'статья' };
 
 const out = [];
 out.push(`# 👋 Привет, я ${identity.shortName}`);
@@ -34,6 +38,22 @@ for (const p of filterForTarget(projects.projects, TARGET).filter((p) => p.featu
   out.push(`- **[${p.name}](${p.url})** — ${p.tagline}.`);
 }
 out.push('');
+
+const ownBooks = filterForTarget(books.books.filter((b) => b.kind === 'own'), TARGET);
+if (ownBooks.length) {
+  out.push('## 📚 Книги и материалы');
+  out.push('');
+  out.push('Пишу про 1С для разработчиков — и для тех, кто приходит на платформу с других стеков.');
+  out.push('');
+  for (const b of ownBooks) {
+    const fmt = FORMAT_LABEL[b.format] ?? b.format ?? '';
+    const status = STATUS_LABEL[b.status] ?? b.status ?? '';
+    const meta = [fmt, status].filter(Boolean).join(', ');
+    const suffix = meta ? ` _(${meta})_` : '';
+    out.push(`- **[${b.title}](${b.url})** — ${b.description}${suffix}`);
+  }
+  out.push('');
+}
 
 out.push('## 🤝 Где меня найти');
 out.push('');
