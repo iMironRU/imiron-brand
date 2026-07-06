@@ -1,6 +1,15 @@
 {
   "online": [
     {
+      "id": "crypto-arm",
+      "name": "Crypto ARM",
+      "description": "Встроенная подпись PDF по ГОСТ (PAdES) прямо в браузере — без сервера, без отправки данных. Поддержка нескольких подписей и пакетной обработки до 5 файлов. Требует КриптоПро CSP.",
+      "url": "https://github.com/iMironRU/crypto-arm",
+      "meta": "github.com/iMironRU/crypto-arm",
+      "icon": "shield",
+      "targets": ["app", "site", "github-profile", "github-pages"]
+    },
+    {
       "id": "everything-all-right",
       "name": "Everything All Right?",
       "description": "Быстрый статус-чек — всё ли в порядке прямо сейчас.",
