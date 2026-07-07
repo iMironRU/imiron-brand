@@ -72,7 +72,7 @@ const html = `<!DOCTYPE html>
     <div class="mylinks">
       <a href="https://app.imiron.ru">{приложения что я сделал}</a>
       <span>·</span>
-      <a href="https://book.imiron.ru">{книги которые я читаю}</a>
+      <a href="/book">{книги — пишу и читаю}</a>
     </div>
   </section>
 </main>
@@ -83,4 +83,6 @@ const html = `<!DOCTYPE html>
 const dir = join(ROOT, 'dist', 'site');
 mkdirSync(dir, { recursive: true });
 writeFileSync(join(dir, 'index.html'), html);
-console.log('✓ dist/site/index.html собран');
+// Кастомный домен GitHub Pages — imiron.ru отдаётся с корня imironru.github.io.
+writeFileSync(join(dir, 'CNAME'), 'imiron.ru\n');
+console.log('✓ dist/site/index.html + CNAME собран');
