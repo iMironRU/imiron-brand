@@ -109,8 +109,8 @@ const body = `
   ${HEADER_HTML('книги и материалы')}
 
   <div class="tabs" role="tablist">
-    ${own.length ? `<button class="tab" data-panel="write" role="tab" aria-selected="false">Пишу <span class="tab-count">${own.length}</span></button>` : ''}
     <button class="tab" data-panel="read" role="tab" aria-selected="false">Читаю <span class="tab-count">${recommend.length}</span></button>
+    ${own.length ? `<button class="tab" data-panel="write" role="tab" aria-selected="false">Пишу <span class="tab-count">${own.length}</span></button>` : ''}
   </div>
 
   ${own.length ? `
