@@ -94,6 +94,7 @@
       "description": "«Деловая книга года 2025». 6 принципов, 10 постулатов и 20 правил проектного управления на примерах из российской практики — от ТНК-BP и «Альфа-Групп» до Оргкомитета «Сочи-2014». Выросла из курса автора в бизнес-школе «Сколково».",
       "stores": [
         { "label": "МИФ", "url": "https://www.mann-ivanov-ferber.ru/catalog/product/upravlenie-proektami/", "icon": "layers" },
+        { "label": "ЛитРес", "url": "https://www.litres.ru/book/pavel-alferov/proektnoe-upravlenie-kak-pravilno-delat-pravilnye-veschi-70516456/", "icon": "square" },
         { "label": "Читай-город", "url": "https://www.chitai-gorod.ru/product/proektnoe-upravlenie-kak-pravilno-delat-pravilnye-veshchi-3028813", "icon": "bag" }
       ],
       "targets": ["book", "site"]
