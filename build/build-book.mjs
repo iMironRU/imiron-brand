@@ -8,10 +8,16 @@ const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').
 const { books } = loadJSON('books.json');
 
 const BOOK_CSS = `
-  .section-head { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-bottom: 40px; animation: fadeUp 0.65s 0.08s ease both; }
-  .section-label { font-family: 'Unbounded', sans-serif; font-size: 9px; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.9); }
-  .section-title { font-family: 'Unbounded', sans-serif; font-size: 22px; font-weight: 400; color: #fff; letter-spacing: 0.01em; }
-  .books { width: 100%; max-width: 760px; display: flex; flex-direction: column; gap: 20px; }
+  .tabs { display: inline-flex; gap: 4px; padding: 5px; margin-bottom: 40px; background: var(--surface); border: 1px solid var(--border); border-radius: 40px; animation: fadeUp 0.65s 0.08s ease both; }
+  .tab { font-family: 'Unbounded', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 0.04em; color: var(--muted); background: transparent; border: none; border-radius: 40px; padding: 11px 26px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: background 0.22s, color 0.22s; }
+  .tab:hover { color: #fff; }
+  .tab.is-active { background: rgba(255,255,255,0.92); color: #2a3033; }
+  .tab-count { font-family: 'Mulish', sans-serif; font-size: 11px; font-weight: 600; opacity: 0.55; }
+  .tab.is-active .tab-count { opacity: 0.75; }
+  .panel { display: none; width: 100%; justify-content: center; }
+  .panel.is-active { display: flex; }
+  .panel-lead { text-align: center; font-size: 13px; color: var(--muted); line-height: 1.7; max-width: 560px; margin: 0 auto 28px; }
+  .books { width: 100%; max-width: 760px; display: flex; flex-direction: column; gap: 20px; margin: 0 auto; }
   .book { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 28px 28px 22px; display: flex; flex-direction: column; gap: 16px; transition: background 0.25s, border-color 0.25s, transform 0.2s; animation: fadeUp 0.6s ease both; }
   .book:hover { background: var(--hover); border-color: var(--border-strong); transform: translateY(-2px); }
   .book-top { display: flex; gap: 18px; align-items: flex-start; }
@@ -29,7 +35,7 @@ const BOOK_CSS = `
   .store-btn:hover { background: rgba(255,255,255,0.25); border-color: rgba(255,255,255,0.5); color: #fff; }
   .store-btn svg { width: 14px; height: 14px; flex-shrink: 0; opacity: 0.7; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
   .store-btn:hover svg { opacity: 1; }
-  @media (max-width: 520px) { .book { padding: 20px 18px 18px; } .book-top { gap: 12px; } .book-stores { padding-left: 0; } .section-title { font-size: 18px; } .page { padding: 56px 16px 56px; } }
+  @media (max-width: 520px) { .book { padding: 20px 18px 18px; } .book-top { gap: 12px; } .book-stores { padding-left: 0; } .tab { padding: 10px 18px; font-size: 11px; } .page { padding: 56px 16px 56px; } }
 `;
 
 function pad2(n) { return String(n).padStart(2, '0'); }
@@ -73,25 +79,57 @@ const recommend = books.filter(b => b.kind !== 'own');
 const ownHtml = own.map(renderBook).join('');
 const recommendHtml = recommend.map(renderBook).join('');
 
+const TAB_SCRIPT = `
+  (function () {
+    var tabs = document.querySelectorAll('.tab');
+    var panels = document.querySelectorAll('.panel');
+    function activate(name) {
+      var found = false;
+      tabs.forEach(function (t) {
+        var on = t.dataset.panel === name;
+        t.classList.toggle('is-active', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        if (on) found = true;
+      });
+      panels.forEach(function (p) { p.classList.toggle('is-active', p.id === 'panel-' + name); });
+      return found;
+    }
+    tabs.forEach(function (t) {
+      t.addEventListener('click', function () {
+        activate(t.dataset.panel);
+        history.replaceState(null, '', '#' + t.dataset.panel);
+      });
+    });
+    var hash = (location.hash || '').replace('#', '');
+    if (!activate(hash)) activate('write');
+  })();
+`;
+
 const body = `
   ${HEADER_HTML('книги и материалы')}
 
+  <div class="tabs" role="tablist">
+    ${own.length ? `<button class="tab" data-panel="write" role="tab" aria-selected="false">Пишу <span class="tab-count">${own.length}</span></button>` : ''}
+    <button class="tab" data-panel="read" role="tab" aria-selected="false">Читаю <span class="tab-count">${recommend.length}</span></button>
+  </div>
+
   ${own.length ? `
-  <div class="section-head">
-    <span class="section-label">/ own</span>
-    <h1 class="section-title">Пишу</h1>
-  </div>
-  <div class="books">${ownHtml}</div>
-  ` : ''}
+  <section class="panel" id="panel-write" role="tabpanel">
+    <div>
+      <p class="panel-lead">Пишу про 1С для тех, кто приходит на платформу с других стеков — и для новичков.</p>
+      <div class="books">${ownHtml}</div>
+    </div>
+  </section>` : ''}
 
-  <div class="section-head" style="margin-top: 56px;">
-    <span class="section-label">/ books</span>
-    <h1 class="section-title">Читаю и советую</h1>
-  </div>
-
-  <div class="books">${recommendHtml}</div>
+  <section class="panel" id="panel-read" role="tabpanel">
+    <div>
+      <p class="panel-lead">Книги, которые читаю сам и советую другим.</p>
+      <div class="books">${recommendHtml}</div>
+    </div>
+  </section>
 
   ${FOOTER_HTML}
+  <script>${TAB_SCRIPT}</script>
 `;
 
 const html = wrap('Книги — iMiron', BASE_CSS + BOOK_CSS, body);
