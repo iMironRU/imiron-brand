@@ -101,7 +101,7 @@ const TAB_SCRIPT = `
       });
     });
     var hash = (location.hash || '').replace('#', '');
-    if (!activate(hash)) activate('write');
+    if (!activate(hash)) activate('read');
   })();
 `;
 
