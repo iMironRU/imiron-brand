@@ -1,8 +1,9 @@
 // Сборщик главной витрины imiron.ru — линктри-лендинг.
 // Дизайн: серый фон #858F93, аватар + лого + соцсети + ссылки на субдомены.
-// Ассеты (SVG-иконки соцсетей, фото, лого) остаются на imiron.ru/images/.
+// Ассеты (фото, лого, соцроконки, фавиконки) лежат в assets/images/ репозитория
+// и копируются в dist/site/images/ — деплоятся на Pages вместе с сайтом.
 import { loadJSON, ROOT } from './lib/data.mjs';
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync, existsSync, cpSync } from 'node:fs';
 import { join } from 'node:path';
 
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -85,4 +86,12 @@ mkdirSync(dir, { recursive: true });
 writeFileSync(join(dir, 'index.html'), html);
 // Кастомный домен GitHub Pages — imiron.ru отдаётся с корня imironru.github.io.
 writeFileSync(join(dir, 'CNAME'), 'imiron.ru\n');
-console.log('✓ dist/site/index.html + CNAME собран');
+
+// Ассеты imiron.ru/images/* — копируем из репозитория в сборку.
+const assetsDir = join(ROOT, 'assets', 'images');
+if (existsSync(assetsDir)) {
+  cpSync(assetsDir, join(dir, 'images'), { recursive: true });
+  console.log('✓ dist/site/index.html + CNAME + images собран');
+} else {
+  console.log('✓ dist/site/index.html + CNAME собран (assets/images/ пока нет)');
+}
