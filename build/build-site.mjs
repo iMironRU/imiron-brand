@@ -3,6 +3,7 @@
 // Ассеты (фото, лого, соцроконки, фавиконки) лежат в assets/images/ репозитория
 // и копируются в dist/site/images/ — деплоятся на Pages вместе с сайтом.
 import { loadJSON, ROOT } from './lib/data.mjs';
+import { METRIKA_SNIPPET } from './lib/metrika.mjs';
 import { mkdirSync, writeFileSync, existsSync, cpSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -45,6 +46,8 @@ const html = `<!DOCTYPE html>
   <link rel="icon" type="image/png" sizes="16x16" href="https://imiron.ru/images/favicon/favicon-16x16.png">
 
   <meta name="zen-verification" content="TiJJwmxqgvi2azgB1UNyxJdzlF08WIZmrGIrHLYD4QLfxuWANCFrEjyNNxFoX0MD" />
+
+  ${METRIKA_SNIPPET}
 
   <style>
     html{-webkit-box-sizing:border-box;box-sizing:border-box}*,*::after,*::before{-webkit-box-sizing:inherit;box-sizing:inherit}ul,ol{padding:0}a{text-decoration:none;color:inherit}body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,figure,figcaption,blockquote,dl,dd{margin:0}ul{list-style:none}img{max-width:100%;display:block}input,button,textarea,select{font:inherit;color:inherit;border-radius:none;background-color:inherit;padding:0}html,body{height:100%}body{background-color:#858F93}img{max-width:100%;-o-object-fit:cover;object-fit:cover}.main{height:100%}.miron{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;min-height:100%;padding:50px 15px}@media (max-width: 576px), (orientation: landscape) and (max-height: 576px){.miron{padding:15px}}.miron__link{display:block;margin-bottom:30px}@media (max-width: 576px), (orientation: landscape) and (max-height: 576px){.miron__link{margin-bottom:25px}}.miron__foto{max-width:163px;width:100%;height:auto}@media (max-width: 576px), (orientation: landscape) and (max-height: 576px){.miron__foto{max-width:120px}}.miron__logo{width:100%;max-width:522px;height:auto}@media (max-width: 576px), (orientation: landscape) and (max-height: 576px){.miron__logo{max-width:300px}}.social{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.social__item:not(:last-child){margin-right:28px}@media (max-width: 576px), (orientation: landscape) and (max-height: 576px){.social__item:not(:last-child){margin-right:15px}}.social__link{display:block}.social__img{max-width:61px;height:auto;width:100%}@media (max-width: 576px), (orientation: landscape) and (max-height: 576px){.social__img{max-width:43px}}

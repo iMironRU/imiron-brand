@@ -1,6 +1,8 @@
 // Общий шаблон дизайна витрин app.imiron.ru / book.imiron.ru.
 // Тот же glassmorphism — Unbounded + Mulish, серый фон, grain-оверлей.
 
+import { METRIKA_SNIPPET } from './metrika.mjs';
+
 export const GRAIN = `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E")`;
 
 export const BASE_CSS = `
@@ -103,6 +105,7 @@ export function wrap(title, css, body) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${title}</title>
 ${FONTS}
+${METRIKA_SNIPPET}
 <style>${css}</style>
 </head>
 <body>
