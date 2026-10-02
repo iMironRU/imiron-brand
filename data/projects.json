@@ -37,6 +37,20 @@
       "featured": true,
       "keywords": ["1С", "BSL", "образование", "интерпретатор", "monaco-editor", "playground"],
       "targets": ["all"]
+    },
+    {
+      "id": "ipbanmanager",
+      "name": "IPBanManager",
+      "tagline": "Защита RDP от подбора паролей на Windows-сервере — IPBan в одно меню",
+      "description": "Менеджер IPBan (DigitalRuby) для Windows-серверов: установка, обновление, белый список и разбан из одного меню, запуск одной строкой PowerShell. Показывает изменения конфига до применения.",
+      "roles": ["Автор"],
+      "url": "https://github.com/iMironRU/IPBanManager",
+      "demoUrl": "https://imiron.ru/IPBanManager/",
+      "license": "MIT",
+      "status": "active",
+      "featured": false,
+      "keywords": ["Windows Server", "PowerShell", "RDP", "безопасность", "sysadmin"],
+      "targets": ["github-pages", "github-profile", "site", "habr"]
     }
   ],
   "_todo": [
